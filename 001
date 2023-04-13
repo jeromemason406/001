@@ -1,0 +1,760 @@
+<?php if ( have_rows( $current_language.'_languageso' ) ) : ?>
+<?php while ( have_rows( $current_language.'_languageso' ) ) : the_row(); ?>
+<?php if ( have_rows( 'gibkij_kontent' ) ): ?>
+<?php while ( have_rows( 'gibkij_kontent' ) ) : the_row(); ?>
+
+
+<?php if ( get_row_layout() == 'шапка' ) : ?>
+
+<?php 
+			if ( get_sub_field('check_section') == 1){
+				$thisLanguages = $current_language;
+			}else{
+				$thisLanguages = 'en';
+			}
+		?>
+
+<?php if ( have_rows( $thisLanguages, 'option' ) ) : ?>
+<?php while ( have_rows( $thisLanguages, 'option' ) ) : the_row(); ?>
+<?php if ( have_rows( 'shapka' ) ) : ?>
+<?php while ( have_rows( 'shapka' ) ) : the_row(); ?>
+<div id='top_menu' class='top bg_1 text_16 montserrat'>
+	<div class='wrapper'>
+		<div class="top__inner">
+			<div class='logo'>
+				<a href='<?php echo get_home_url() ?>'>
+					<img src='<?php the_sub_field( 'logotip' ); ?>'>
+				</a>
+			</div>
+			<div>
+				<div class="top__inner-top">
+					<div class='top_buttons color_white text_bold text_16'>
+						<div class='top_button bg_0'>
+							<span>
+								<?php the_sub_field( 'sloty_progmatic_name' ); ?>
+							</span>
+							<ul class='variants bg_3 line_25'>
+								<?php if ( have_rows( 'sloty_progmatic_elementy' ) ) : ?>
+								<?php while ( have_rows( 'sloty_progmatic_elementy' ) ) : the_row(); ?>
+								<li><a href='<?php the_sub_field( ' ssylka' ); ?>' class='padding_10_30_5'>
+										<?php the_sub_field( 'imya' ); ?>
+									</a></li>
+								<?php endwhile; ?>
+								<?php endif; ?>
+							</ul>
+						</div>
+						<div class='top_button bg_0 disabled'>
+							<a href="<?php the_sub_field( 'onlajn_kazino_ssylka' ); ?>" class='color_gray disabled'>
+								<?php the_sub_field( 'onlajn_kazino_tekst' ); ?>
+							</a>
+						</div>
+					</div>
+					<div class="menu__btn">
+						<svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z" fill="white" />
+						</svg>
+					</div>
+				</div>
+				<div id='sub_menu' class='text_20 color_white text_bold montserrat'>
+					<div class="col span_12_of_12">
+						<nav class="menuTop">
+							<?php
+											$args = array(
+												'theme_location'  => 'menuRu',
+												'menu_class'      => 'menu__list'
+												);
+											wp_nav_menu($args);
+										?>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endwhile; ?>
+<?php endif; ?>
+
+<!-- Закрытие общего page -->
+<?php endwhile; ?>
+<?php endif; ?>
+<!-- Закрытие общего page -->
+
+<?php elseif ( get_row_layout() == 'игровой_автомат_sweet_bonanza_pragmatic_play' ) : ?>
+
+<?php 
+			if ( get_field('check_section_2') == 1){
+				$thisLanguages = $current_language;
+			}else{
+				$thisLanguages = 'en';
+			}
+		?>
+
+<?php if ( have_rows( $thisLanguages, 'option' ) ) : ?>
+<?php while ( have_rows( $thisLanguages, 'option' ) ) : the_row(); ?>
+<?php if ( have_rows( 'igrovoj_avtomat_sweet_bonanza_pragmatic_play' ) ) : ?>
+<?php while ( have_rows( 'igrovoj_avtomat_sweet_bonanza_pragmatic_play' ) ) : the_row(); ?>
+<div class='slot_block'>
+	<div class='wrapper section group'>
+		<div class="col span_12_of_12">
+			<div class='block game_block bg_2'>
+				<h1 class='text_bold color_white'>
+					<?php the_sub_field( 'zagolovok' ); ?>
+				</h1>
+				<div class='game_frame slot__game'>
+					<div class="game__main">
+						<div class="game__code" data-frame="<?php the_sub_field( 'data-frame' ); ?>"
+							id="<?php the_sub_field( 'id' ); ?>">
+							<img width="725" height="497" src="<?php the_sub_field( 'foto' ); ?>" />
+							<a href="<?php the_sub_field( 'ssylka_knopki' ); ?>" class="slot__game-play-button play bg_green color_0">
+								<span class="slot__game-play-button-text">
+									<?php the_sub_field( 'nazvanie_knopki' ); ?>
+								</span>
+							</a>
+						</div>
+					</div>
+					<div class="slot__game-footer">
+						<div class="slot__game-footer-col color_white">
+							<div class="slot__game-footer-buttons">
+								<div class="slot__game-footer-button slot__game-footer-button--expand expand-wrap"
+									data-game_id="game_63d2f1195f709">
+									<div class="slot__game-footer-button-icon expand">
+										<svg class="slot__game-footer-button-icon-image">
+											<use xlink:href="#expand"></use>
+										</svg>
+									</div>
+									<div class="slot__game-footer-button-text">Развернуть</div>
+								</div>
+								<div class="slot__game-footer-button slot__game-footer-button--attention report-problem"
+									data-pid="48735" title="Нажмите на кнопку, если у вас не работает игра!">
+									<div class="slot__game-footer-button-icon attention-sign">
+										<svg class="slot__game-footer-button-icon-image">
+											<use xlink:href="#attention-sign"></use>
+										</svg>
+									</div>
+									<div class="slot__game-footer-button-text">Сообщить о проблеме</div>
+								</div>
+							</div>
+							<a class="slot__game-footer-link js_open-popup-subscribe" href="#">Ищете другие бесплатные игры?</a>
+						</div>
+						<div class="slot__game-footer-col color_white">
+							<div class="slot__bonus js_slot-bonus copy-code bg_3" data-code="POKAZ" data-brand="Покердом"
+								data-country="ru">
+								<div class="slot__bonus-col">
+									<div class="slot__bonus-prefix bg_2">
+										<?php the_sub_field( 'tekst_1' ); ?>
+									</div>
+									<div class="slot__bonus-title">
+										<?php the_sub_field( 'tekst_2' ); ?>
+									</div>
+								</div>
+								<div class="slot__bonus-col">
+									<span class="slot__bonus--button slot__bonus--button--promokod">
+										<a class="slot__bonus--button-text bg_green slot__bonus--button--promokod-text outLink" href="#"
+											data-text="Получить">
+											<?php the_sub_field( 'promokod' ); ?>
+										</a>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endwhile; ?>
+<?php endif; ?>
+
+<!-- Закрытие общего page -->
+<?php endwhile; ?>
+<?php endif; ?>
+<!-- Закрытие общего page -->
+
+<?php elseif ( get_row_layout() == 'характеристики' ) : ?>
+
+<?php 
+			if ( get_field('check_section_3') == 1 ){
+				$thisLanguages = $current_language;
+			}else{
+				$thisLanguages = 'en';
+			}
+		?>
+
+<?php if ( have_rows( $thisLanguages, 'option' ) ) : ?>
+<?php while ( have_rows( $thisLanguages, 'option' ) ) : the_row(); ?>
+
+<?php if ( have_rows( 'harakteristiki' ) ) : ?>
+<?php while ( have_rows( 'harakteristiki' ) ) : the_row(); ?>
+<div class='char_block'>
+	<div class='wrapper section group'>
+		<div class="col span_12_of_12">
+			<div class='block bg_3'>
+				<h2 class='text_24 color_white text_bold'>
+					<?php the_sub_field( 'zagolovok' ); ?>
+				</h2>
+				<div class='chars char_block__inner'>
+					<?php if ( have_rows( 'znacheniya_left' ) ) : ?>
+					<div class='left'>
+						<?php while ( have_rows( 'znacheniya_left' ) ) : the_row(); ?>
+						<div class='char'>
+							<div class='char_name'>
+								<?php the_sub_field( 'nazvanie' ); ?>
+							</div>
+							<div class='char_value'>
+								<?php the_sub_field( 'znachenie' ); ?>
+							</div>
+						</div>
+						<?php endwhile; ?>
+					</div>
+					<?php else : ?>
+					<?php // no rows found ?>
+					<?php endif; ?>
+					<?php if ( have_rows( 'znacheniya_pravo' ) ) : ?>
+					<div class='right'>
+						<?php while ( have_rows( 'znacheniya_pravo' ) ) : the_row(); ?>
+						<div class='char'>
+							<div class='char_name'>
+								<?php the_sub_field( 'nazvanie' ); ?>
+							</div>
+							<div class='char_value'>
+								<?php the_sub_field( 'znachenie' ); ?>
+							</div>
+						</div>
+						<?php endwhile; ?>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endwhile; ?>
+<?php endif; ?>
+
+<!-- Закрытие общего page -->
+<?php endwhile; ?>
+<?php endif; ?>
+<!-- Закрытие общего page -->
+
+<?php elseif ( get_row_layout() == 'выплаты' ) : ?>
+
+<?php 
+			if ( get_field('check_section_4') == 1 ){
+				$thisLanguages = $current_language;
+			}else{
+				$thisLanguages = 'en';
+			}
+		?>
+
+<?php if ( have_rows( $thisLanguages, 'option' ) ) : ?>
+<?php while ( have_rows( $thisLanguages, 'option' ) ) : the_row(); ?>
+
+<?php if ( have_rows( 'vyplaty' ) ) : ?>
+<?php while ( have_rows( 'vyplaty' ) ) : the_row(); ?>
+<div class='payments'>
+	<div class='wrapper section group'>
+		<div class="col span_12_of_12">
+			<div class='block bg_3'>
+				<h2 class='text_24 color_white text_bold'>
+					<?php the_sub_field( 'zagolovok' ); ?>
+				</h2>
+				<div class="payments__items">
+					<?php if ( have_rows( 'znacheniya' ) ) : ?>
+					<?php while ( have_rows( 'znacheniya' ) ) : the_row(); ?>
+					<div class="payments__item">
+						<div class="payments__item-top">
+							<?php the_sub_field( 'nazvanie' ); ?>
+						</div>
+						<div class="payments__item-body">
+							<?php the_sub_field( 'znacheniya' ); ?>
+						</div>
+					</div>
+					<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endwhile; ?>
+<?php endif; ?>
+
+<!-- Закрытие общего page -->
+<?php endwhile; ?>
+<?php endif; ?>
+<!-- Закрытие общего page -->
+
+<?php elseif ( get_row_layout() == 'особенности' ) : ?>
+
+<?php 
+			if ( get_field('check_section_5') == 1 ){
+				$thisLanguages = $current_language;
+			}else{
+				$thisLanguages = 'en';
+			}
+		?>
+
+<?php if ( have_rows( $thisLanguages, 'option' ) ) : ?>
+<?php while ( have_rows( $thisLanguages, 'option' ) ) : the_row(); ?>
+
+<?php if ( have_rows( 'osobennosti' ) ) : ?>
+<?php while ( have_rows( 'osobennosti' ) ) : the_row(); ?>
+<div class='peculiarities'>
+	<div class='wrapper section group'>
+		<div class="col span_12_of_12">
+			<div class='block bg_3'>
+				<h2 class='text_24 color_white text_bold'>
+					<?php the_sub_field( 'zagolovok' ); ?>
+				</h2>
+				<div class="peculiarities__items">
+					<?php if ( have_rows( 'znacheniya' ) ) : ?>
+					<?php while ( have_rows( 'znacheniya' ) ) : the_row(); ?>
+					<div class="peculiarities__item">
+						<div class="peculiarities__item-top">
+							<img src="<?php the_sub_field( 'ikonka' ); ?>" alt="">
+							<div class="peculiarities__item-name">
+								<?php the_sub_field( 'nazvanie' ); ?>
+							</div>
+						</div>
+						<div class="peculiarities__item-value">
+							<?php the_sub_field( 'znachenie' ); ?>
+						</div>
+					</div>
+					<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endwhile; ?>
+<?php endif; ?>
+
+<!-- Закрытие общего page -->
+<?php endwhile; ?>
+<?php endif; ?>
+<!-- Закрытие общего page -->
+
+<?php elseif ( get_row_layout() == 'достоинства_и_недостатки' ) : ?>
+
+<?php 
+			if ( get_field('check_section_6') == 1 ){
+				$thisLanguages = $current_language;
+			}else{
+				$thisLanguages = 'en';
+			}
+		?>
+
+<?php if ( have_rows( $thisLanguages, 'option' ) ) : ?>
+<?php while ( have_rows( $thisLanguages, 'option' ) ) : the_row(); ?>
+
+<?php if ( have_rows( 'dostoinstva_i_nedostatki' ) ) : ?>
+<?php while ( have_rows( 'dostoinstva_i_nedostatki' ) ) : the_row(); ?>
+<div class='pros_cons_block'>
+	<div class='wrapper section group'>
+		<div class="col span_12_of_12">
+			<div class='block bg_3'>
+				<h2 class='text_24 color_white text_bold'>
+					<?php the_sub_field( 'zagolovok' ); ?>
+				</h2>
+				<div class='chars'>
+					<div class='left'>
+						<?php if ( have_rows( 'dostoinstva' ) ) : ?>
+						<?php while ( have_rows( 'dostoinstva' ) ) : the_row(); ?>
+						<div class='pros_cons'>
+							<div class='plus'></div>
+							<div class='text'>
+								<?php the_sub_field( 'nazvanie' ); ?>
+							</div>
+						</div>
+						<?php endwhile; ?>
+					</div>
+					<?php else : ?>
+					<?php // no rows found ?>
+					<?php endif; ?>
+					<?php if ( have_rows( 'nedostatki' ) ) : ?>
+					<div class='right'>
+						<?php while ( have_rows( 'nedostatki' ) ) : the_row(); ?>
+						<div class='pros_cons'>
+							<div class='minus'></div>
+							<div class='text'>
+								<?php the_sub_field( 'nazvanie' ); ?>
+							</div>
+						</div>
+						<?php endwhile; ?>
+						<?php endif; ?>
+					</div>
+					<div class='clear'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endwhile; ?>
+<?php endif; ?>
+
+<!-- Закрытие общего page -->
+<?php endwhile; ?>
+<?php endif; ?>
+<!-- Закрытие общего page -->
+
+<?php elseif ( get_row_layout() == 'поучить_бонус_для_бесплатной_игры' ) : ?>
+
+	<?php 
+			if ( get_field('check_section_7') == 1 ){
+				$thisLanguages = $current_language;
+			}else{
+				$thisLanguages = 'en';
+			}
+		?>
+
+<?php if ( have_rows( $thisLanguages, 'option' ) ) : ?>
+<?php while ( have_rows( $thisLanguages, 'option' ) ) : the_row(); ?>
+
+<?php if ( have_rows( 'pouchit_bonus_dlya_besplatnoj_igry' ) ) : ?>
+<?php while ( have_rows( 'pouchit_bonus_dlya_besplatnoj_igry' ) ) : the_row(); ?>
+<div class='freeGameBonus'>
+	<div class='wrapper section group'>
+		<div class="col span_12_of_12">
+			<div class='block bg_3'>
+				<h2 class='text_24 color_white text_bold'>
+					<?php the_sub_field( 'zagolovok' ); ?>
+				</h2>
+				<div class="freeGameBonus__items">
+					<?php $zapis = get_sub_field( 'zapis' ); ?>
+					<?php if ( $zapis ) : ?>
+					<?php foreach ( $zapis as $post ) : ?>
+					<?php setup_postdata ( $post ); ?>
+					<div class="freeGameBonus__item">
+						<img src="<?php echo get_the_post_thumbnail_url() ?>" alt="">
+						<div class="freeGameBonus__item-name">
+							<?php the_title(); ?>
+						</div>
+						<div class="freeGameBonus__item-body">
+							<?php the_field('tekst'); ?>
+							<span class="code">
+								<?php the_field('promokod'); ?>
+							</span>
+						</div>
+						<a href="<?php the_field( 'ssylka' ); ?>" class="freeGameBonus__item-btn">
+							Обзор
+						</a>
+					</div>
+					<?php endforeach; ?>
+					<?php wp_reset_postdata(); ?>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endwhile; ?>
+<?php endif; ?>
+
+<!-- Закрытие общего page -->
+<?php endwhile; ?>
+<?php endif; ?>
+<!-- Закрытие общего page -->
+
+<?php elseif ( get_row_layout() == 'формы_оплаты' ) : ?>
+
+<?php 
+			if ( get_field('check_section_8') == 1 ){
+				$thisLanguages = $current_language;
+			}else{
+				$thisLanguages = 'en';
+			}
+		?>
+
+<?php if ( have_rows( $thisLanguages, 'option' ) ) : ?>
+<?php while ( have_rows( $thisLanguages, 'option' ) ) : the_row(); ?>
+
+<?php if ( have_rows( 'formy_oplaty' ) ) : ?>
+<?php while ( have_rows( 'formy_oplaty' ) ) : the_row(); ?>
+<div class='formPayments'>
+	<div class='wrapper section group'>
+		<div class="col span_12_of_12">
+			<div class='block bg_3'>
+				<h2 class='text_24 color_white text_bold'>
+					<?php the_sub_field( 'zagolovok' ); ?>
+				</h2>
+				<div class="formPayments__items">
+					<?php $zapis = get_sub_field( 'zapis' ); ?>
+					<?php if ( $zapis ) : ?>
+					<?php foreach ( $zapis as $post ) : ?>
+					<?php setup_postdata ( $post ); ?>
+					<div class="formPayments__item">
+						<div class="formPayments__item-titleWrap">
+							<div class="formPayments__item-title">
+								<?php the_title(); ?>
+							</div>
+							<a href="<?php the_field( 'ssylka' ); ?>">Читать дальше</a>
+						</div>
+						<div class="formPayments__item-text">
+							<?php the_content(); ?>
+						</div>
+					</div>
+					<?php endforeach; ?>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php wp_reset_postdata(); ?>
+<?php endwhile; ?>
+<?php endif; ?>
+
+<!-- Закрытие общего page -->
+<?php endwhile; ?>
+<?php endif; ?>
+<!-- Закрытие общего page -->
+
+<?php elseif ( get_row_layout() == 'бонусные_опционы_+_символы_и_коэффициенты' ) : ?>
+
+<?php 
+			if ( get_field('check_section_9')  == 1 ){
+				$thisLanguages = $current_language;
+			}else{
+				$thisLanguages = 'en';
+			}
+		?>
+
+<?php if ( have_rows( $thisLanguages, 'option' ) ) : ?>
+<?php while ( have_rows( $thisLanguages, 'option' ) ) : the_row(); ?>
+<?php if ( have_rows( 'bonusnye_opcziony_symbols_and_coefficients' ) ) : ?>
+<?php while ( have_rows( 'bonusnye_opcziony_symbols_and_coefficients' ) ) : the_row(); ?>
+
+<div class='two_columns_block'>
+	<div class='wrapper section group'>
+		<div class="col span_12_of_12">
+			<div class='block bg_3'>
+				<div class='blocks two_columns_block__inner'>
+					<?php if ( have_rows( 'bonusnye_opcziony' ) ) : ?>
+					<?php while ( have_rows( 'bonusnye_opcziony' ) ) : the_row(); ?>
+					<div class='left'>
+						<h2 class='text_24 color_white text_bold bonus'>
+							<?php the_sub_field( 'zagolovok' ); ?>
+						</h2>
+						<?php if ( have_rows( 'elementy' ) ) : ?>
+						<div class='chars'>
+							<?php while ( have_rows( 'elementy' ) ) : the_row(); ?>
+							<div class='char'>
+								<div class='char_name'>
+									<?php the_sub_field( 'zagolovok' ); ?>
+								</div>
+								<div class='char_value'>
+									<?php the_sub_field( 'znachenie' ); ?>
+								</div>
+							</div>
+							<?php endwhile; ?>
+						</div>
+						<?php else : ?>
+						<?php // no rows found ?>
+						<?php endif; ?>
+					</div>
+					<?php endwhile; ?>
+					<?php endif; ?>
+					<?php if ( have_rows( 'simvoly_i_koefficzienty' ) ) : ?>
+					<?php while ( have_rows( 'simvoly_i_koefficzienty' ) ) : the_row(); ?>
+					<div class='blocks2'>
+						<h2 class='text_24 color_white text_bold symbols'>
+							<?php the_sub_field( 'zagolovok' ); ?>
+						</h2>
+						<div class='table-wrapper'>
+							<?php the_sub_field( 'tablicza_1' ); ?>
+							<?php the_sub_field( 'tablicza_2' ); ?>
+						</div>
+					</div>
+					<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php endwhile; ?>
+<?php endif; ?>
+
+<!-- Закрытие общего page -->
+<?php endwhile; ?>
+<?php endif; ?>
+<!-- Закрытие общего page -->
+
+<?php elseif ( get_row_layout() == 'текст' ) : ?>
+<div class="textPageBlock color_white">
+	<div class='wrapper section group'>
+		<div class="block bg_3">
+			<?php the_sub_field( 'tekstovyj_blok_na_stranicze' ); ?>
+		</div>
+	</div>
+</div>
+
+<?php elseif ( get_row_layout() == 'похожие_автоматы' ) : ?>
+
+	<?php 
+		if ( get_field('check_section_10' ) == 1 ){
+			$thisLanguages = $current_language;
+		}else{
+			$thisLanguages = 'en';
+		}
+	?>
+
+<?php if ( have_rows( $thisLanguages, 'option' ) ) : ?>
+<?php while ( have_rows( $thisLanguages, 'option' ) ) : the_row(); ?>
+
+<?php if ( have_rows( 'pohozhie_avtomaty' ) ) : ?>
+<?php while ( have_rows( 'pohozhie_avtomaty' ) ) : the_row(); ?>
+<div class='similar_block'>
+	<div class='wrapper section group'>
+		<div class="col span_12_of_12">
+			<div class='block bg_3'>
+				<h2 class='text_24 color_white text_bold'>
+					<?php the_sub_field( 'zagolovok' ); ?>
+				</h2>
+				<?php if ( have_rows( 'sekczii' ) ) : ?>
+				<?php while ( have_rows( 'sekczii' ) ) : the_row(); ?>
+				<h5 class='text_18 line_25 color_white text_bold'>
+					<?php the_sub_field( 'zagolovok' ); ?>
+				</h5>
+				<div class='items'>
+					<?php $zapisi = get_sub_field( 'zapisi' ); ?>
+					<?php if ( $zapisi ) : ?>
+					<?php foreach ( $zapisi as $post ) : ?>
+					<?php setup_postdata ( $post ); ?>
+					<div class='item-wrapper'>
+						<div class='item'>
+							<div class='image'>
+								<div class='category'><?php the_field('kategoriya'); ?></div>
+								<div class='rating'>
+									<div class='star'><svg class="rating-stars__star rating-stars__star--full" width="20" height="20">
+											<use xlink:href="#icon-star"></use>
+										</svg></div> <?php the_field('rejting'); ?>
+								</div>
+								<a href='<?php the_field('ssylka'); ?>'>
+									<img src='<?php echo get_the_post_thumbnail_url() ?>'>
+								</a>
+							</div>
+							<a href='<?php the_field('ssylka'); ?>'>
+								<div class='button'>Играть бесплатно</div>
+							</a>
+							<h3><a href='#'><?php the_title(); ?></a></h3>
+							<div class='text_block'>
+								<p><?php the_content(); ?></p>
+							</div>
+						</div>
+					</div>
+					<?php endforeach; ?>
+					<?php wp_reset_postdata(); ?>
+				</div>
+				<?php endif; ?>
+				<?php endwhile; ?>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endwhile; ?>
+<?php endif; ?>
+
+<!-- Закрытие общего page -->
+<?php endwhile; ?>
+<?php endif; ?>
+<!-- Закрытие общего page -->
+
+
+<?php elseif ( get_row_layout() == 'footer' ) : ?>
+
+<?php 
+			if ( get_field('check_section_11') == 1 ){
+				$thisLanguages = $current_language;
+			}else{
+				$thisLanguages = 'en';
+			}
+		?>
+
+<?php if ( have_rows( $thisLanguages, 'option' ) ) : ?>
+<?php while ( have_rows( $thisLanguages, 'option' ) ) : the_row(); ?>
+<?php if ( have_rows( 'footer' ) ) : ?>
+<?php while ( have_rows( 'footer' ) ) : the_row(); ?>
+<footer class="footer">
+	<div class="container">
+		<div class="footer__textTop">
+			<?php the_sub_field( 'tekst_s_verhu' ); ?>
+		</div>
+		<div class="footer__inner">
+			<div class="footer__left">
+				<a href="<?php echo get_home_url() ?>" class="logo">
+					<img src="<?php the_sub_field( 'logotip' ); ?>" alt="">
+				</a>
+				<script src="https://yastatic.net/share2/share.js"></script>
+				<div class="ya-share2" data-curtain data-size="l" data-shape="round"
+					data-services="vkontakte,telegram,twitter,viber,whatsapp"></div>
+				<div class="footer__left-text">
+					<?php the_sub_field( 'tekst_pod_logo' ); ?>
+					<br>
+					<br>
+					<?php the_sub_field( 'vtoroj_tekst_pose_logotipa' ); ?>
+				</div>
+			</div>
+			<div class="footer__icons">
+				<div class="footer__icons-top">
+					<div class="footer__icons-top-flex">
+						<?php if ( have_rows( 'logotipy_pervyj_uroven' ) ) : ?>
+						<?php while ( have_rows( 'logotipy_pervyj_uroven' ) ) : the_row(); ?>
+						<a href="<?php the_sub_field( 'ssylka' ); ?>"><img src="<?php the_sub_field( 'foto' ); ?>" alt=""></a>
+						<?php endwhile; ?>
+						<?php else : ?>
+						<?php // no rows found ?>
+						<?php endif; ?>
+					</div>
+					<div class="footer__icons-top-flex">
+						<?php if ( have_rows( 'logotipy_vtoroj_uroven' ) ) : ?>
+						<?php while ( have_rows( 'logotipy_vtoroj_uroven' ) ) : the_row(); ?>
+						<a href="<?php the_sub_field( 'ssylka' ); ?>"><img src="<?php the_sub_field( 'foto' ); ?>" alt=""></a>
+						<?php endwhile; ?>
+						<?php else : ?>
+						<?php // no rows found ?>
+						<?php endif; ?>
+					</div>
+					<div class="footer__icons-top-flex">
+						<?php if ( have_rows( 'logotipy_tretij_uroven' ) ) : ?>
+						<?php while ( have_rows( 'logotipy_tretij_uroven' ) ) : the_row(); ?>
+						<a href="<?php the_sub_field( 'ssylka' ); ?>"><img src="<?php the_sub_field( 'foto' ); ?>" alt=""></a>
+						<?php endwhile; ?>
+						<?php else : ?>
+						<?php // no rows found ?>
+						<?php endif; ?>
+					</div>
+				</div>
+				<div class="footer__icons-bottom">
+					<a href="<?php the_sub_field( 'dostupno_v_google_play' ); ?>"><img
+							src="<?php bloginfo('template_url'); ?>/assets/img/ru_badge_web_generic.png" alt=""></a>
+					<a href="<?php the_sub_field( 'dostupno_v_appstore' ); ?>"><img
+							src="<?php bloginfo('template_url'); ?>/assets/img/badge-lrg.svg" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<?php endwhile; ?>
+<?php endif; ?>
+
+<!-- Закрытие общего page -->
+<?php endwhile; ?>
+<?php endif; ?>
+<!-- Закрытие общего page -->
+
+
+
+
+
+
+<?php endif; ?>
+<?php endwhile; ?>
+<?php endif; ?>
+<?php endwhile; ?>
+<?php endif; ?>
